@@ -90,3 +90,88 @@ View the API documentation at [http://3.131.138.206:8080/swagger-ui/index.html#/
 Hi, I'm [Florencia](https://www.linkedin.com/in/florencialecha/), the developer of this project. I'm a full-stack programmer with a strong focus on backend development. My passion lies in creating clean, maintainable, and efficient software architectures, following best practices like Domain-Driven Design (DDD) and SOLID principles. I continuously strive to enhance my skills and deliver high-quality solutions that meet both business and user needs.
 
 Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/florencialecha/) or check out my [GitHub](https://github.com/florencialecha) for more projects.
+
+---
+# Update Java and JavaScript. Programming Procedures By:
+* **Johan Gloria  -** Full-stack Developer
+* **Sofía Guzmán  -** Testing 🧪
+
+## 🏛️ Architecture
+The backend is designed using Domain-Driven Design (DDD) principles, organizing the application into distinct submodules or "bounded contexts." This approach promotes a clean architecture, making the system scalable, maintainable, and closely aligned with the business logic.
+
+## High-Level Design
+![diagram DDD](images/diagram%20DDD.jpeg)
+As shown in the diagram, the system is divided into an Internal System and an External Aggregator. Recommendations:
+- AggregatorService (External): Acts as the primary entry point (Facade) for travel recommendations. It coordinates requests and aggregates data from various internal services to provide a complete response to the client.
+
+- Internal System: Contains the core business logic, separated into modules:
+
+- Atracciones (Attractions)
+
+- Restaurants
+
+- NearbyCities
+
+- External APIs: The internal services consume external APIs to enrich the data:
+
+- Google Maps: Provides data on nearby places and distances.
+
+- INEGI: Provides tourism indicators.
+
+- Datatur (SECTUR): Provides information on most-visited locations.
+
+## Package Structure (by Feature)
+This DDD approach is reflected in the project's package structure, where each core domain has its own dedicated folder. This isolates domain logic, services, and controllers, keeping the concerns of each module separate.
+
+````
+com/digitalbooking
+└── recommendations
+│
+├── attractions
+│   ├── controller
+│   │   └── AttractionController.java
+│   ├── domain
+│   │   └── Attraction.java
+│   ├── dto
+│   │   └── AttractionDTO.java
+│   └── service
+│       └── AttractionService.java
+│
+├── nearbycities
+│   ├── controller
+│   │   └── NearbyCityController.java
+│   ├── domain
+│   │   └── NearbyCity.java
+│   ├── dto
+│   │   └── NearbyCityDTO.java
+│   └── service
+│       └── NearbyCityService.java
+│
+├── restaurants
+│   ├── controller
+│   │   └── RestaurantController.java
+│   ├── domain
+│   │   └── Restaurant.java
+│   ├── dto
+│   │   └── RestaurantDTO.java
+│   └── service
+│       └── RestaurantService.java
+│
+├── reserves
+│   └── ... (structure follows domain pattern)
+│
+└── common
+├── controller
+│   └── RecommendationController.java (uses the aggregator)
+├── service
+│   └── RecommendationAggregatorService.java
+├── dto
+│   └── RecommendationResponse.java
+└── exception
+├── ExternalServiceException.java
+├── InvalidCoordinatesException.java
+└── ...
+````
+
+## Sprint 2
+Working on...
