@@ -92,7 +92,7 @@ public class UpdateProductService {
             Image image = modelMapper.map(imageToCreateDTO, Image.class);
             image.setProduct(existingProduct);
             return image;
-        }).collect(Collectors.toList());
+        }).toList();
         existingProduct.getImages().clear(); // <-- Clear existing images
         existingProduct.getImages().addAll(images); // <-- Add new images to the existing list
 
