@@ -290,3 +290,115 @@ All deliverables for Sprint 2 have been committed and pushed to the main reposit
 - Integrate CI/CD pipeline with Jest and coverage thresholds.
 
 - Explore mutation testing to further validate test robustness.
+
+### 📦 Sprint 3 – Documentation, Testing & Architecture Diagrams
+
+## 🧭 General Project Descriptio
+This project is a modular travel recommendation system that integrates data from external APIs (Google Maps, INEGI, Datatur) to suggest attractions, restaurants, and nearby cities. It includes:
+
+- Reservations Module: Allows users to book experiences and manage itineraries.
+
+- City Graph Visualization: Displays nearby cities and distances using a graph-based interface.
+
+- Offer Management: Sellers can create and publish promotional offers.
+- Public Catalog: Shoppers can browse available items and view detailed information.
+
+The backend follows Domain-Driven Design (DDD) principles, ensuring scalability and maintainability.
+
+### ⚙️ Installation Instructions
+
+1. Clone the Repository
+````
+git clone https://github.com/your-org/travel-recommendation-system.git
+cd travel-recommendation-system
+````
+2. Install Dependencies
+Java Backend
+- Requires Java 17+ and Maven
+
+````
+mvn clean install
+````
+JavaScript Frontend & Testing
+- Requires Node.js 18+
+
+````
+npm install
+````
+3. Run the Project
+Backend
+````
+mvn spring-boot:run
+````
+Frontend
+````
+npm start
+````
+🧪 Unit Tests Overview
+✅ Sprint 1 – Java Backend
+- Module: Error handling and API resilience
+
+- Tool: JUnit
+
+- Tests: Validate exception propagation, custom error messages, and fallback logic
+
+- Execution:
+````
+mvn test
+````
+✅ Sprint 2 – JavaScript Graph Module
+- Module: Nearby cities graph visualization
+- Tool: Jest
+
+- Tests:
+
+    - Valid city-distance rendering
+
+    - Edge cases (empty data, malformed input)
+
+    - Error handling and DOM updates
+
+- Execution:
+````
+npm test
+````
+Coverage Example
+````
+npm test -- --coverage
+````
+Expected output:
+PASS  graph/__tests__/graph.test.js
+✓ renders valid graph nodes
+✓ handles empty input gracefully
+✓ throws error on malformed data
+
+Coverage summary:
+Statements   : 93.00%
+Branches     : 89.00%
+Functions    : 94.00%
+Lines        : 92.00%
+
+Screenshots of coverage reports are available in `/docs/coverage-report/.`
+
+🔍 Review & Adjustment
+✅ All modules reviewed for documentation completeness
+
+✅ Diagrams updated and exported to PDF
+
+✅ Repository access configured for the Digital NAO team
+
+✅ Code comments standardized across Java and JavaScript
+
+✅ README files updated for each sprint
+
+
+🧩 Diagrams
+Architecture diagrams are available in /docs/diagrams/ and include:
+
+📐 Class Diagram (Java backend)
+
+🔄 Flowchart of data aggregation and recommendation logic
+
+🔗 Module Interaction Diagram (Frontend ↔ Backend ↔ External APIs)
+
+All diagrams are delivered in PDF format for easy sharing and review.
