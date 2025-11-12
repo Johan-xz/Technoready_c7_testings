@@ -1,4 +1,5 @@
 const attractionsService = require('../src/services/attractionsService');
+const { calculateDistanceKm } = require('../../common-utils/src/geoUtils');
 
 describe('attractionsService.findNearbyAttractions', () => {
   test('devuelve nodos y distancias desde coordenadas dadas', () => {

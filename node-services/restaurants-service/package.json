@@ -7,8 +7,9 @@
     "test": "jest"
   },
   "dependencies": {
-    "express": "^4.18.2",
-    "dotenv": "^16.3.1"
+    "common-utils": "file:../common-utils",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
   },
   "devDependencies": {
     "jest": "^29.7.0",

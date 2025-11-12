@@ -1,4 +1,5 @@
 const attractionsService = require('../services/attractionsService');
+const { calculateDistanceKm } = require('common-utils/src/geoUtils');
 
 exports.getNearbyAttractions = async (req, res) => {
   const { lat, lng } = req.query;

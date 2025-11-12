@@ -175,3 +175,118 @@ com/digitalbooking
 
 ## Sprint 2
 Working on...
+
+
+## Rationale for Node.js microservices
+
+This project uses independent microservices built with Node.js and Express to encapsulate geospatial recommendation logic for nearby cities, restaurants, and attractions. Each service is lightweight, testable with Jest, and can scale horizontally. Shared geospatial utilities (e.g., Haversine distance) live in a common module to avoid duplication and simplify maintenance.
+
+- **Decoupling:** Each domain (cities, restaurants, attractions) evolves and deploys independently.
+- **Performance:** Node.js suits I/O-bound HTTP workloads and efficient computation.
+- **Reuse:** Shared logic centralized in a common-utils package.
+- **Scalability:** Services scale individually based on demand.
+- **Testability:** Per-service Jest suites integrate cleanly with CI/CD.
+
+---
+
+## Installation and local development
+
+```bash
+# Clone a service
+git clone https://github.com/your-org/nearby-service.git
+cd nearby-service
+
+# Install dependencies
+npm install
+
+# Run the service
+npm start
+
+# Run tests
+npm test
+```
+
+- **Environment:** Create a `.env` file per service with its port.
+  - Nearby: `PORT=4000`
+  - Restaurants: `PORT=4001`
+  - Attractions: `PORT=4002`
+- **Shared utilities:** If using a local common package, ensure it’s available either via relative path (e.g., `../../common-utils/src/geoUtils`) or installed as a local package (e.g., `npm install ../common-utils` and import by name).
+
+---
+
+## API endpoints
+
+### Nearby-service endpoints
+
+| Method | Endpoint         | Description                                  | Example query                                      |
+|-------|-------------------|----------------------------------------------|----------------------------------------------------|
+| GET   | /nearby-cities    | Returns nearby cities with computed distances | /nearby-cities?lat=25.6866&lng=-100.3161           |
+
+> Sources:
+
+#### Example response
+```json
+{
+  "origin": { "lat": 25.6866, "lng": -100.3161 },
+  "nodes": [
+    { "label": "San Pedro", "lat": 25.7000, "lng": -100.3100 }
+  ],
+  "edges": [
+    { "from": "origin", "to": "San Pedro", "distanceKm": 1.5 }
+  ]
+}
+```
+
+---
+
+### Restaurants-service endpoints
+
+| Method | Endpoint             | Description                                        | Example query                                          |
+|-------|-----------------------|----------------------------------------------------|--------------------------------------------------------|
+| GET   | /nearby-restaurants   | Returns nearby restaurants with computed distances | /nearby-restaurants?lat=25.6866&lng=-100.3161          |
+
+> Sources:
+
+#### Example response
+```json
+{
+  "origin": { "lat": 25.6866, "lng": -100.3161 },
+  "nodes": [
+    { "label": "La Casona", "cuisine": "Mexican", "lat": 25.7000, "lng": -100.3100 }
+  ],
+  "edges": [
+    { "from": "origin", "to": "La Casona", "distanceKm": 1.2 }
+  ]
+}
+```
+
+---
+
+### Attractions-service endpoints
+
+| Method | Endpoint            | Description                                         | Example query                                         |
+|-------|----------------------|-----------------------------------------------------|-------------------------------------------------------|
+| GET   | /nearby-attractions  | Returns nearby attractions with computed distances  | /nearby-attractions?lat=25.6866&lng=-100.3161         |
+
+> Sources:
+
+#### Example response
+```json
+{
+  "origin": { "lat": 25.6866, "lng": -100.3161 },
+  "nodes": [
+    { "label": "Parque Fundidora", "category": "Park", "lat": 25.6800, "lng": -100.2900 }
+  ],
+  "edges": [
+    { "from": "origin", "to": "Parque Fundidora", "distanceKm": 3.0 }
+  ]
+}
+```
+
+---
+
+## Notes for integration
+
+- **Query parameters:** All endpoints require lat and lng as query parameters; respond with 400 if missing.
+- **Response shape:** Consistent across services with origin, nodes, and edges; edges include distanceKm calculated via common-utils.
+- **Java integration:** Configure a WebClient per service with its base URL; compose aggregated responses in your Java layer if needed.
