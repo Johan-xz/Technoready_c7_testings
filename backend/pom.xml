@@ -129,6 +129,7 @@
 
 	<build>
 		<plugins>
+		<!-- Spring-Boot-plugin -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -141,10 +142,8 @@
 					</excludes>
 				</configuration>
 			</plugin>
-			<!-- The maven-compiler-plugin configuration includes the '-parameters' option,
-			which generates parameter name information in the compiled class files.
-			This allows for improved debugging and documentation of methods,
-			as well as better integration with dynamic binding and reflection tools. -->
+
+			<!-- Maven-compiler-plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -154,6 +153,8 @@
 					</compilerArgs>
 				</configuration>
 			</plugin>
+
+			<!-- JaCoCo-plugin -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -173,8 +174,6 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
 	</build>
-
 </project>

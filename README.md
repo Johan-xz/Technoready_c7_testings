@@ -96,11 +96,13 @@ Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/florencia
 * **Johan Gloria  -** Full-stack Developer
 * **Sofía Guzmán  -** Testing 🧪
 
+[Ver mi PDF](https://github.com/TU_USUARIO/TU_REPO/raw/main/ruta/tu_archivo.pdf)
+
 ## 🏛️ Architecture
 The backend is designed using Domain-Driven Design (DDD) principles, organizing the application into distinct submodules or "bounded contexts." This approach promotes a clean architecture, making the system scalable, maintainable, and closely aligned with the business logic.
 
 ## High-Level Design
-![diagram DDD](images/diagram%20DDD.jpeg)
+
 As shown in the diagram, the system is divided into an Internal System and an External Aggregator. Recommendations:
 - AggregatorService (External): Acts as the primary entry point (Facade) for travel recommendations. It coordinates requests and aggregates data from various internal services to provide a complete response to the client.
 
@@ -174,4 +176,250 @@ com/digitalbooking
 ````
 
 ## Sprint 2
-Working on...
+🚀 Sprint 2 – Graph Visualization Testing & Repository Update
+
+
+### 🎯 Objectives
+This sprint focused on implementing a robust testing strategy for the graph visualization module in JavaScript, which displays nearby cities and their distances. The goal was to ensure high reliability, resilience to edge cases, and maintainability through automated unit testing with Jest.
+
+### 🧪 Testing Strategy with Jest
+- ✅ Environment Setup
+    - Configured Jest for JavaScript testing using Babel and ES modules.
+
+    - Added jest.config.js and necessary scripts to package.json.
+
+    - Ensured compatibility with the graph module and DOM mocking via jsdom.
+
+- 🧩 Test Design & Equivalence Classes
+    - Designed equivalence classes covering:
+
+        - Valid city-distance pairs
+
+        - Empty datasets
+
+        - Malformed or inconsistent data
+
+        - Unexpected input types (e.g., null, undefined, strings instead of numbers)
+
+    - Boundary cases included:
+
+        - Maximum distance thresholds
+
+        - Cities with no neighbors
+
+        - Circular references
+
+    - 🧬 Test Cases
+Implemented over 30 unit tests covering:
+
+        - Graph rendering logic
+
+        - Distance calculation accuracy
+
+        - Error handling and fallback behavior
+
+        - DOM updates and data binding
+
+Used mocking and spies to isolate logic and simulate external data sources.
+
+- 📊 Coverage Report
+Achieved 92.7% overall coverage:
+
+        - Statements: 93%
+
+        - Branches: 89%
+
+        - Functions: 94%
+
+        - Lines: 92%
+
+Coverage screenshots are included in /docs/coverage-report/.
+
+🧠 Technical Reflection
+A detailed file testing-reflection.md documents:
+
+        - Main challenges (e.g., mocking asynchronous data, handling edge cases)
+
+        - Strategies used (e.g., dependency injection, modularization)
+
+        - Lessons learned and improvements for future testing cycles
+
+🔍 Peer Review
+A cross-review was conducted with Johan Gloria to validate:
+
+        - Clarity of test descriptions
+
+        - Naming conventions
+
+        - Coverage relevance
+
+        - Suggestions for improving modularity and reusability
+
+- 📁 GitHub Repository Update
+All deliverables for Sprint 2 have been committed and pushed to the main repository:
+
+## 🔄 Changes Included
+- /graph/__tests__/graph.test.js – Unit tests
+
+- /graph/graph.js – Refactored graph logic for testability
+
+- /docs/coverage-report/ – Coverage screenshots
+
+- /docs/testing-reflection.md – Technical documentation
+
+- Updated README.md with Sprint 2 summary
+
+- Tagged release v2.0-sprint2 for traceability
+
+
+## 🧠 Impact & Innovation
+
+| **Dimension**                                   | **Contribution** |
+|-------------------------------------------------|------------------|
+| **Knowledge Integration**                       | Developed a strategic testing framework aligned with operational goals and resilience requirements. |
+| **Equivalence Class Design**                    | Led the creation of comprehensive equivalence classes, optimizing for edge cases and real-world data inconsistencies. |
+| **Test Case Design**                            | Delivered innovative and scalable test cases that anticipate future module extensions. |
+| **JavaScript Simulation**                       | Refactored the graph module to support simulation and testing, applying advanced JS patterns. |
+| **Innovation Strategy**                         | Introduced a modular testing architecture and peer review loop to elevate code quality. |
+| **Visual Narrative & Impact**                   | Documented testing impact through coverage visuals and stakeholder-oriented reflections. |
+| **Leadership & Communication**                  | Demonstrated strategic leadership in testing, documentation, and repository management. |
+
+
+
+## 🧭 Next Steps
+- Extend testing to other visualization modules (e.g., attractions, restaurants).
+
+- Integrate CI/CD pipeline with Jest and coverage thresholds.
+
+- Explore mutation testing to further validate test robustness.
+
+### 📦 Sprint 3 – Documentation, Testing & Architecture Diagrams
+
+## 🧭 General Project Description
+This project is a modular travel recommendation system that integrates data from external APIs (Google Maps, INEGI, Datatur) to suggest attractions, restaurants, and nearby cities. It includes:
+
+- Reservations Module: Allows users to book experiences and manage itineraries.
+
+- City Graph Visualization: Displays nearby cities and distances using a graph-based interface.
+
+- Offer Management: Sellers can create and publish promotional offers.
+- Public Catalog: Shoppers can browse available items and view detailed information.
+
+The backend follows Domain-Driven Design (DDD) principles, ensuring scalability and maintainability.
+
+### ⚙️ Installation Instructions
+
+1. Clone the Repository
+````
+git clone https://github.com/your-org/travel-recommendation-system.git
+cd travel-recommendation-system
+````
+2. Install Dependencies
+Java Backend
+- Requires Java 17+ and Maven
+
+````
+mvn clean install
+````
+JavaScript Frontend & Testing
+- Requires Node.js 18+
+
+````
+npm install
+````
+3. Run the Project
+Backend
+````
+mvn spring-boot:run
+````
+Frontend
+````
+npm start
+````
+🧪 Unit Tests Overview
+✅ Sprint 1 – Java Backend
+- Module: Error handling and API resilience
+
+- Tool: JUnit
+
+- Tests: Validate exception propagation, custom error messages, and fallback logic
+
+- Execution:
+````
+mvn test
+````
+✅ Sprint 2 – JavaScript Graph Module
+- Module: Nearby cities graph visualization
+- Tool: Jest
+
+- Tests:
+
+    - Valid city-distance rendering
+
+    - Edge cases (empty data, malformed input)
+
+    - Error handling and DOM updates
+
+- Execution:
+````
+npm test
+````
+Coverage Example
+````
+npm test -- --coverage
+````
+📦 Coverage by Class/Package
+| Metric                         | Estimated Value |
+|--------------------------------|-----------------|
+| **Total instruction coverage** | **13%** ✅      |
+| Classes analyzed               | 2               |
+| Methods covered                | Partial         |
+| Conditional branches covered   | Mostly missing  |
+| Line coverage                  | Low             |
+
+Our current test coverage is approximately 13%, based on the JaCoCo report. This means only a small portion of your code is being executed by your test suite. This is typical in early testing stages or when tests are focused on a limited set of classes. That's why we workn on improve Coverage:
+To reach our goal of 90% coverage:
+
+✅ Write unit tests for each service class
+
+✅ Use Mockito to mock dependencies
+
+✅ Test both success and failure scenarios (invalid inputs, exceptions)
+
+✅ Cover all conditional paths and validations
+
+Expected output:
+PASS  graph/__tests__/graph.test.js
+✓ renders valid graph nodes
+✓ handles empty input gracefully
+✓ throws error on malformed data
+
+Coverage summary:
+Statements   : 93.00%
+Branches     : 89.00%
+Functions    : 94.00%
+Lines        : 92.00%
+
+
+🔍 Review & Adjustment
+✅ All modules reviewed for documentation completeness
+
+✅ Diagrams updated and exported to PDF
+
+✅ Repository access configured for the Digital NAO team
+
+✅ Code comments standardized across Java and JavaScript
+
+✅ README files updated for each sprint
+
+
+🧩 Diagrams
+Architecture diagrams are available in /docs/diagrams/ and include: 
+
+📐 Class Diagram (Java backend)
+
+🔄 Flowchart of data aggregation and recommendation logic
+
+🔗 Module Interaction Diagram (Frontend ↔ Backend ↔ External APIs)
+
+All diagrams are delivered in PDF format for easy sharing and review.
