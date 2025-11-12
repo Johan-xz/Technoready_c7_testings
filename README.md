@@ -96,11 +96,13 @@ Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/florencia
 * **Johan Gloria  -** Full-stack Developer
 * **Sofía Guzmán  -** Testing 🧪
 
+[Ver mi PDF](https://github.com/TU_USUARIO/TU_REPO/raw/main/ruta/tu_archivo.pdf)
+
 ## 🏛️ Architecture
 The backend is designed using Domain-Driven Design (DDD) principles, organizing the application into distinct submodules or "bounded contexts." This approach promotes a clean architecture, making the system scalable, maintainable, and closely aligned with the business logic.
 
 ## High-Level Design
-![diagram DDD](images/diagram%20DDD.jpeg)
+
 As shown in the diagram, the system is divided into an Internal System and an External Aggregator. Recommendations:
 - AggregatorService (External): Acts as the primary entry point (Facade) for travel recommendations. It coordinates requests and aggregates data from various internal services to provide a complete response to the client.
 
@@ -270,7 +272,7 @@ All deliverables for Sprint 2 have been committed and pushed to the main reposit
 - Tagged release v2.0-sprint2 for traceability
 
 
-## 🧠 Impact & Innovation (C2 Level Alignment)
+## 🧠 Impact & Innovation
 
 | **Dimension**                                   | **Contribution** |
 |-------------------------------------------------|------------------|
@@ -293,7 +295,7 @@ All deliverables for Sprint 2 have been committed and pushed to the main reposit
 
 ### 📦 Sprint 3 – Documentation, Testing & Architecture Diagrams
 
-## 🧭 General Project Descriptio
+## 🧭 General Project Description
 This project is a modular travel recommendation system that integrates data from external APIs (Google Maps, INEGI, Datatur) to suggest attractions, restaurants, and nearby cities. It includes:
 
 - Reservations Module: Allows users to book experiences and manage itineraries.
@@ -366,6 +368,26 @@ Coverage Example
 ````
 npm test -- --coverage
 ````
+📦 Coverage by Class/Package
+| Metric                         | Estimated Value |
+|--------------------------------|-----------------|
+| **Total instruction coverage** | **13%** ✅      |
+| Classes analyzed               | 2               |
+| Methods covered                | Partial         |
+| Conditional branches covered   | Mostly missing  |
+| Line coverage                  | Low             |
+
+Our current test coverage is approximately 13%, based on the JaCoCo report. This means only a small portion of your code is being executed by your test suite. This is typical in early testing stages or when tests are focused on a limited set of classes. That's why we workn on improve Coverage:
+To reach our goal of 90% coverage:
+
+✅ Write unit tests for each service class
+
+✅ Use Mockito to mock dependencies
+
+✅ Test both success and failure scenarios (invalid inputs, exceptions)
+
+✅ Cover all conditional paths and validations
+
 Expected output:
 PASS  graph/__tests__/graph.test.js
 ✓ renders valid graph nodes
@@ -378,7 +400,6 @@ Branches     : 89.00%
 Functions    : 94.00%
 Lines        : 92.00%
 
-Screenshots of coverage reports are available in `/docs/coverage-report/.`
 
 🔍 Review & Adjustment
 ✅ All modules reviewed for documentation completeness
@@ -393,7 +414,7 @@ Screenshots of coverage reports are available in `/docs/coverage-report/.`
 
 
 🧩 Diagrams
-Architecture diagrams are available in /docs/diagrams/ and include:
+Architecture diagrams are available in /docs/diagrams/ and include: 
 
 📐 Class Diagram (Java backend)
 
