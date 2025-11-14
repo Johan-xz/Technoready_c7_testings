@@ -1,5 +1,5 @@
 const cities = require('../models/cities');
-const { calculateDistanceKm } = require('../../common-utils/src/geoUtils');
+const { calculateDistanceKm } = require('common-utils/src/geoUtils');
 exports.findNearbyCities = (lat, lng) => {
   const origin = { lat, lng };
   const nodes = cities.getNodes();

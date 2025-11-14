@@ -259,7 +259,7 @@ A cross-review was conducted with Johan Gloria to validate:
 All deliverables for Sprint 2 have been committed and pushed to the main repository:
 
 ## 🔄 Changes Included
-- /graph/__tests__/graph.test.js – Unit tests
+- /graph/_tests_/graph.test.js – Unit tests
 
 - /graph/graph.js – Refactored graph logic for testability
 
@@ -274,15 +274,15 @@ All deliverables for Sprint 2 have been committed and pushed to the main reposit
 
 ## 🧠 Impact & Innovation
 
-| **Dimension**                                   | **Contribution** |
+| *Dimension*                                   | *Contribution* |
 |-------------------------------------------------|------------------|
-| **Knowledge Integration**                       | Developed a strategic testing framework aligned with operational goals and resilience requirements. |
-| **Equivalence Class Design**                    | Led the creation of comprehensive equivalence classes, optimizing for edge cases and real-world data inconsistencies. |
-| **Test Case Design**                            | Delivered innovative and scalable test cases that anticipate future module extensions. |
-| **JavaScript Simulation**                       | Refactored the graph module to support simulation and testing, applying advanced JS patterns. |
-| **Innovation Strategy**                         | Introduced a modular testing architecture and peer review loop to elevate code quality. |
-| **Visual Narrative & Impact**                   | Documented testing impact through coverage visuals and stakeholder-oriented reflections. |
-| **Leadership & Communication**                  | Demonstrated strategic leadership in testing, documentation, and repository management. |
+| *Knowledge Integration*                       | Developed a strategic testing framework aligned with operational goals and resilience requirements. |
+| *Equivalence Class Design*                    | Led the creation of comprehensive equivalence classes, optimizing for edge cases and real-world data inconsistencies. |
+| *Test Case Design*                            | Delivered innovative and scalable test cases that anticipate future module extensions. |
+| *JavaScript Simulation*                       | Refactored the graph module to support simulation and testing, applying advanced JS patterns. |
+| *Innovation Strategy*                         | Introduced a modular testing architecture and peer review loop to elevate code quality. |
+| *Visual Narrative & Impact*                   | Documented testing impact through coverage visuals and stakeholder-oriented reflections. |
+| *Leadership & Communication*                  | Demonstrated strategic leadership in testing, documentation, and repository management. |
 
 
 
@@ -310,32 +310,32 @@ The backend follows Domain-Driven Design (DDD) principles, ensuring scalability 
 ### ⚙️ Installation Instructions
 
 1. Clone the Repository
-````
+`
 git clone https://github.com/your-org/travel-recommendation-system.git
 cd travel-recommendation-system
-````
+`
 2. Install Dependencies
 Java Backend
 - Requires Java 17+ and Maven
 
-````
+`
 mvn clean install
-````
+`
 JavaScript Frontend & Testing
 - Requires Node.js 18+
 
-````
+`
 npm install
-````
+`
 3. Run the Project
 Backend
-````
+`
 mvn spring-boot:run
-````
+`
 Frontend
-````
+`
 npm start
-````
+`
 🧪 Unit Tests Overview
 ✅ Sprint 1 – Java Backend
 - Module: Error handling and API resilience
@@ -345,9 +345,9 @@ npm start
 - Tests: Validate exception propagation, custom error messages, and fallback logic
 
 - Execution:
-````
+`
 mvn test
-````
+`
 ✅ Sprint 2 – JavaScript Graph Module
 - Module: Nearby cities graph visualization
 - Tool: Jest
@@ -361,17 +361,17 @@ mvn test
     - Error handling and DOM updates
 
 - Execution:
-````
+`
 npm test
-````
+`
 Coverage Example
-````
+`
 npm test -- --coverage
-````
+`
 📦 Coverage by Class/Package
 | Metric                         | Estimated Value |
 |--------------------------------|-----------------|
-| **Total instruction coverage** | **13%** ✅      |
+| *Total instruction coverage* | *13%* ✅      |
 | Classes analyzed               | 2               |
 | Methods covered                | Partial         |
 | Conditional branches covered   | Mostly missing  |
@@ -389,7 +389,7 @@ To reach our goal of 90% coverage:
 ✅ Cover all conditional paths and validations
 
 Expected output:
-PASS  graph/__tests__/graph.test.js
+PASS  graph/_tests_/graph.test.js
 ✓ renders valid graph nodes
 ✓ handles empty input gracefully
 ✓ throws error on malformed data

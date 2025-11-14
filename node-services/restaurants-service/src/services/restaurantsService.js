@@ -1,5 +1,5 @@
 const restaurants = require('../models/restaurants');
-const { calculateDistanceKm } = require('../../common-utils/src/geoUtils');
+const { calculateDistanceKm } = require('common-utils/src/geoUtils');
 exports.findNearbyRestaurants = (lat, lng) => {
   const origin = { lat, lng };
   const nodes = restaurants.getNodes();

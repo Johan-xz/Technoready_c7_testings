@@ -1,5 +1,5 @@
 // Importa la función desde el módulo compartido
-const { calculateDistanceKm } = require('../../common-utils/src/geoUtils');
+const { calculateDistanceKm } = require('common-utils/src/geoUtils');
 const attractions = require('../models/attractions');
 
 exports.findNearbyAttractions = (lat, lng) => {
