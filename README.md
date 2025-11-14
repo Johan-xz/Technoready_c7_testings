@@ -96,11 +96,13 @@ Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/florencia
 * **Johan Gloria  -** Full-stack Developer
 * **Sofía Guzmán  -** Testing 🧪
 
+[Ver mi PDF](https://github.com/TU_USUARIO/TU_REPO/raw/main/ruta/tu_archivo.pdf)
+
 ## 🏛️ Architecture
 The backend is designed using Domain-Driven Design (DDD) principles, organizing the application into distinct submodules or "bounded contexts." This approach promotes a clean architecture, making the system scalable, maintainable, and closely aligned with the business logic.
 
 ## High-Level Design
-![diagram DDD](images/diagram%20DDD.jpeg)
+
 As shown in the diagram, the system is divided into an Internal System and an External Aggregator. Recommendations:
 - AggregatorService (External): Acts as the primary entry point (Facade) for travel recommendations. It coordinates requests and aggregates data from various internal services to provide a complete response to the client.
 
